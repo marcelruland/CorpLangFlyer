@@ -1,0 +1,50 @@
+\documentclass[12pt,oneside]{article}
+\usepackage{geometry}
+\geometry{a5paper}
+\usepackage{graphicx}	
+\usepackage{amssymb}
+\usepackage{lipsum}
+\usepackage{eso-pic}
+	\newcommand\BackgroundPicA{%
+	\put(0,0){%
+	\parbox[b][\paperheight]{\paperwidth}{%
+	\vfill
+	\centering
+	\includegraphics[width=\paperwidth,height=\paperheight]{background_portrait_new.pdf}%
+	\vfill
+	}}}
+	\newcommand\BackgroundPicB{%
+	\put(0,0){%
+	\parbox[b][\paperheight]{\paperwidth}{%
+	\vfill
+	\centering
+	\includegraphics[width=2\paperwidth,height=\paperheight]{background_landscape_new.pdf}%
+	\vfill
+	}}}
+	\newcommand\BackgroundPicC{%
+	\put(-421,0){%
+	\parbox[b][\paperheight]{\paperwidth}{%
+	\vfill
+	\centering
+	\includegraphics[width=2\paperwidth,height=\paperheight]{background_landscape_new.pdf}%
+	\vfill
+	}}}
+	\pagestyle{empty}
+\definecolor{upbblue1}{HTML}{00205B} %Pantone 281
+\definecolor{langred1}{HTML}{D73367}
+\definecolor{langgray1}{gray}{0.65}
+\definecolor{upbgray1}{HTML}{C7C9C7} %Pantone 420
+
+\begin{document}%%SURPRESS PAGENUMBERS
+\AddToShipoutPicture*{\BackgroundPicA}
+BackgroundPicA \lipsum[1-2]
+\newpage
+\AddToShipoutPicture*{\BackgroundPicB}
+BackgroundPicB \lipsum[3-4]
+\newpage
+\AddToShipoutPicture*{\BackgroundPicC}
+BackgroundPicC \lipsum[5-6]
+\newpage
+\AddToShipoutPicture*{\BackgroundPicA}
+BackgroundPicA \lipsum[7-8]
+\end{document}  

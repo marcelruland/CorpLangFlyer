@@ -1,0 +1,37 @@
+\documentclass[12pt,oneside,twocolumn]{article}
+\usepackage{geometry}
+\geometry{a4paper,landscape}
+\usepackage{graphicx}	
+\usepackage{amssymb}
+\usepackage{lipsum}
+\usepackage{eso-pic}%%Background Image
+	\newcommand\BackgroundPicA{%
+	\put(0,0){%
+	\parbox[b][\paperheight]{\paperwidth}{%
+	\vfill
+	\centering
+	\includegraphics[width=\paperwidth,height=\paperheight]{background_landscape_new.pdf}%
+	\vfill
+	}}}
+	\newcommand\BackgroundPicB{%
+	\put(0,0){%
+	\parbox[b][\paperheight]{\paperwidth}{%
+	\vfill
+	\centering
+	\includegraphics[width=0.5\paperwidth,height=\paperheight]{background_portrait_new.pdf}%
+	\includegraphics[width=0.5\paperwidth,height=\paperheight]{background_portrait_new.pdf}%
+	\vfill
+	}}}
+	\pagestyle{empty}
+\definecolor{upbblue1}{HTML}{00205B} %Pantone 281
+\definecolor{langred1}{HTML}{D73367}
+\definecolor{langgray1}{gray}{0.65}
+\definecolor{upbgray1}{HTML}{C7C9C7} %Pantone 420
+
+\begin{document}%%SURPRESS PAGENUMBERS
+\AddToShipoutPicture*{\BackgroundPicB}
+\lipsum[1-3]
+\newpage
+\AddToShipoutPicture*{\BackgroundPicA}
+\lipsum[4-6]
+\end{document}  
