@@ -3,7 +3,10 @@
 \geometry{a5paper}
 \usepackage{graphicx}	
 \usepackage{amssymb}
+\usepackage{arimo}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{lipsum}
+\usepackage{titlesec}
 \usepackage{eso-pic}%%Background Image
 	\newcommand\BackgroundPicA{%
 	\put(0,0){%
@@ -34,17 +37,28 @@
 \definecolor{langred1}{HTML}{D73367}
 \definecolor{langgray1}{gray}{0.65}
 \definecolor{upbgray1}{HTML}{C7C9C7} %Pantone 420
+\titleformat{\section}%%Coloured Sections
+{\color{upbblue1}\normalfont\Large\bfseries}
+{\color{upbblue1}\thesection}{1em}{}
+\titleformat{\subsection}%%Coloured SubSections
+{\color{upbblue1}\normalfont\large\bfseries}
+{\color{upbblue1}\thesubsection}{1em}{}
+\titleformat{\subsubsection}%%Coloured SubSubSections
+{\color{upbblue1}\normalfont\normalsize\bfseries}
+{\color{upbblue1}\thesubsubsection}{1em}{}
 
-\begin{document}%%SURPRESS PAGENUMBERS
+\begin{document}
 \AddToShipoutPicture*{\BackgroundPicA}
-BackgroundPicA \lipsum[1-2]
+BackgroundPicA
 \newpage
 \AddToShipoutPicture*{\BackgroundPicB}
-BackgroundPicB \lipsum[3-4]
+\section*{Section}
+\subsection*{Subsection}
+\subsubsection*{Subsubsection}
 \newpage
 \AddToShipoutPicture*{\BackgroundPicC}
-BackgroundPicC \lipsum[5-6]
+BackgroundPicC
 \newpage
 \AddToShipoutPicture*{\BackgroundPicA}
-BackgroundPicA \lipsum[7-8]
+BackgroundPicA
 \end{document}  

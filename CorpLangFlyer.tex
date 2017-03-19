@@ -1,10 +1,16 @@
-\documentclass[12pt,oneside]{article}
-\usepackage{geometry}
-\geometry{a5paper}
+%\documentclass[a5paper,12pt,twoside]{scrartcl}
+%\usepackage{geometry}
+\documentclass[a5paper,12pt,twoside]{article}
+\usepackage[outer=2.65cm,inner=1.8cm,bottom=1.5cm]{geometry}
+\usepackage{microtype}
 \usepackage{graphicx}	
 \usepackage{amssymb}
+\usepackage{arimo}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{lipsum}
-\usepackage{eso-pic}
+\usepackage{titlesec}
+\usepackage{changepage}
+\usepackage{eso-pic}%%Background Image
 	\newcommand\BackgroundPicA{%
 	\put(0,0){%
 	\parbox[b][\paperheight]{\paperwidth}{%
@@ -34,17 +40,62 @@
 \definecolor{langred1}{HTML}{D73367}
 \definecolor{langgray1}{gray}{0.65}
 \definecolor{upbgray1}{HTML}{C7C9C7} %Pantone 420
+\titleformat{\section}%%Coloured Sections
+{\color{upbblue1}\normalfont\Large\bfseries}
+{\color{upbblue1}\thesection}{1em}{}
+\titleformat{\subsection}%%Coloured SubSections
+{\color{upbblue1}\normalfont\large\bfseries}
+{\color{upbblue1}\thesubsection}{1em}{}
+\titleformat{\subsubsection}%%Coloured SubSubSections
+{\color{upbblue1}\normalfont\normalsize\bfseries}
+{\color{upbblue1}\thesubsubsection}{1em}{}
 
-\begin{document}%%SURPRESS PAGENUMBERS
+\begin{document}
 \AddToShipoutPicture*{\BackgroundPicA}
-BackgroundPicA \lipsum[1-2]
-\newpage
+\begin{adjustwidth}{0.2cm}{-0.65cm}
+\begin{center}
+	\includegraphics[scale=0.3]{CorpLangLogo.pdf}
+	
+	\vspace{0.5cm}
+	
+	\textbf{\Huge Conference Programme}
+	
+	\vspace{0.5cm}
+	
+	\textbf{\large March 29--31 2017}
+	
+\end{center}
+\end{adjustwidth}
+	\newpage
 \AddToShipoutPicture*{\BackgroundPicB}
-BackgroundPicB \lipsum[3-4]
-\newpage
+%\section*{Section}
+%\subsection*{Subsection}
+%\subsubsection*{Subsubsection}
+{\color{upbblue1}\lipsum[1]
+
+\vfill
+
+\lipsum[2]}
+\vspace{2cm}
+	\newpage
 \AddToShipoutPicture*{\BackgroundPicC}
-BackgroundPicC \lipsum[5-6]
-\newpage
+{\color{upbblue1}\lipsum[3]
+
+\vfill
+
+\lipsum[4]}
+\vspace{2cm}
+	\newpage
 \AddToShipoutPicture*{\BackgroundPicA}
-BackgroundPicA \lipsum[7-8]
+\begin{adjustwidth}{-0.65cm}{0.2cm}
+\lipsum[5-6]
+
+\vfill
+
+\makebox[\textwidth]{%
+\includegraphics[scale=0.3]{UPB_LOGO_KOMP_CMYK_GB_2015.pdf}%
+\hfill
+\raisebox{-0.95cm}{\includegraphics[scale=0.13]{CorpLangLogo.pdf}}%
+}
+\end{adjustwidth}
 \end{document}  
