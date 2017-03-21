@@ -1,6 +1,4 @@
-%\documentclass[a5paper,12pt,twoside]{scrartcl}
-%\usepackage{geometry}
-\documentclass[a5paper,12pt,twoside]{article}
+\documentclass[a5paper,10pt,twoside]{article}%%Check for better accent commands in comprehensive LaTeX symbols list!!
 \usepackage[outer=2.65cm,inner=1.8cm,bottom=1.5cm]{geometry}
 \usepackage{microtype}
 \usepackage{graphicx}	
@@ -10,6 +8,10 @@
 \usepackage{lipsum}
 \usepackage{titlesec}
 \usepackage{changepage}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage[parfill]{parskip}
 \usepackage{eso-pic}%%Background Image
 	\newcommand\BackgroundPicA{%
 	\put(0,0){%
@@ -51,44 +53,95 @@
 {\color{upbblue1}\thesubsubsection}{1em}{}
 
 \begin{document}
-\AddToShipoutPicture*{\BackgroundPicA}
+\AddToShipoutPicture*{\BackgroundPicA}%%PAGE 1
 \begin{adjustwidth}{0.2cm}{-0.65cm}
 \begin{center}
 	\includegraphics[scale=0.3]{CorpLangLogo.pdf}
 	
 	\vspace{0.5cm}
 	
-	\textbf{\Huge Conference Programme}
+	{\color{upbblue1}\textbf{\Huge Conference Programme}
 	
 	\vspace{0.5cm}
 	
-	\textbf{\large March 29--31 2017}
+	\textbf{\Large March 29--31 2017}
 	
+	\vspace{2.3cm}
+	
+	\begin{tabular}{rl}
+	\multicolumn{2}{c}{\textbf{Wednesday, March 29}}\\
+	19:00 & Conference Warming\\ \addlinespace
+	\multicolumn{2}{c}{\textbf{Thursday, March 30}}\\
+	9:00--9:15 & Conference Opening\\
+	9:15--17:30 & Presentations\\ \addlinespace
+	\multicolumn{2}{c}{\textbf{Friday, March 31}}\\
+	9:30--11:45 & Presentations\\
+	11:45--12:00 & Conference Closing
+	\end{tabular}
+	}
 \end{center}
 \end{adjustwidth}
 	\newpage
-\AddToShipoutPicture*{\BackgroundPicB}
-%\section*{Section}
-%\subsection*{Subsection}
-%\subsubsection*{Subsubsection}
-{\color{upbblue1}\lipsum[1]
-
-\vfill
-
-\lipsum[2]}
-\vspace{2cm}
+\AddToShipoutPicture*{\BackgroundPicB}%%PAGE 2
+{\color{upbblue1}
+\begin{center}
+	\textbf{\Large Thursday, March 30}
+\end{center}
+\begin{tabular}{>{\bfseries}l>{}l>{}r}\toprule
+	9:00--9:15 & \multicolumn{2}{c}{\textit{Conference Opening}}\\ \midrule
+	9:15--10:00 & Klaus P.~Schneider & (University of Bonn)\\ \cmidrule(l){2-3}
+	& \multicolumn{2}{p{8.4cm}}{Doing corpus pragmatics: What you can do and can't do with corpora in the study of linguistic action in interaction.}\\ \midrule
+	10:00--10:30 & \multicolumn{2}{c}{\textit{Coffee Break}}\\ \midrule
+	10:30--11:00 & Alexander Kautzsch & (University of Regensburg)\\ \cmidrule(l){2-3}
+	& \multicolumn{2}{p{8.4cm}}{Tracing features of a new variety of English: Lexis, spelling and morpho-syntax in a corpus of Namibian online newspapers.}\\ \midrule
+	11:00--11:30 & Christian Langstrof & (Paderborn University)\\ \cmidrule(l){2-3}
+	& \multicolumn{2}{p{8.4cm}}{Listening to 150 years of language change: The origins of the New Zealand English Project.}\\ \midrule
+	11:30--12:00 & Mark\'eta Johnov\'a & (Silesian University in Opava)\\ \cmidrule(l){2-3}
+	& \multicolumn{2}{p{8.4cm}}{Gendered talk: Evaluative adjectives on interior design blogs and motoring blogs.}\\ \midrule
+	12:00--14:00 & \multicolumn{2}{c}{\textit{Lunchbreak}}\\ \midrule
+	14:00--14:30 & Charlotte Hahn & (Paderborn University)\\ \cmidrule(l){2-3}
+	& \multicolumn{2}{p{8.4cm}}{Compiling a speech corpus to assess learner development.}\\ \midrule
+	14:30--15:00 & Veronika Kot\r{u}lkov\'a & (Silesian University in Opava)\\ \cmidrule(l){2-3}
+	& \multicolumn{2}{p{8.4cm}}{Korpuseinsatz im Fremdsprachenunterricht.}\\ \midrule
+\end{tabular}
+}
 	\newpage
-\AddToShipoutPicture*{\BackgroundPicC}
-{\color{upbblue1}\lipsum[3]
-
-\vfill
-
-\lipsum[4]}
-\vspace{2cm}
+\AddToShipoutPicture*{\BackgroundPicC}%%PAGE 3
+{\color{upbblue1}
+\begin{center}
+	\textbf{~}
+\end{center}
+\begin{tabular}{>{\bfseries}l>{}l>{}r} \midrule
+	14:30--15:00 & \multicolumn{2}{c}{Poster-Session}\\ \cmidrule(lr){2-3}
+	& Dan Jedli\v{c}ka & \multicolumn{1}{p{5.04cm}}{Parallel corpus of poetry}\\ \addlinespace[2pt]
+	& Michal Klimek & \multicolumn{1}{p{5.04cm}}{Gender in the language of religion}\\ \addlinespace[2pt]
+	& Melanie Mihm & \multicolumn{1}{p{5.04cm}}{Angebote f\"{u}r GermanistInnen in den Clarin-D-Zentren}\\ \addlinespace[2pt]
+	& Ji\v{r}i \v{S}vidernoch & \multicolumn{1}{p{5.04cm}}{Politically correct vocabulary in the news media}\\ \midrule
+	15:30--16:15 & \multicolumn{2}{c}{\textit{Coffee Break}}\\ \midrule
+	16:15--16:45 & Gabriela Rykalov\'a & (Silesian University in Opava)\\ \cmidrule(l){2-3}
+	& \multicolumn{2}{p{8.4cm}}{Arbeit mit ``gestaffelten'' Korpora.}\\ \midrule
+	16:45--17:30 & Sabine Bartsch & (TU Darmstadt)\\ \cmidrule(l){2-3}
+	& \multicolumn{2}{p{8.4cm}}{Digital research in English linguistics.}\\ \bottomrule
+\end{tabular}
+\vspace{1cm}
+	\begin{center}
+		\textbf{\Large Friday, March 31}
+	\end{center}
+\begin{tabular}{>{\bfseries}l>{}l>{}r} \midrule
+	9:30--10:15 & Norbert R.~Wolf & (University of W\"{u}rzburg)\\ \cmidrule(l){2-3}
+	& \multicolumn{2}{p{8.4cm}}{Was ist und was kann ein Referenzkorpus?}\\ \midrule
+	10:15--10:45 & \multicolumn{2}{c}{\textit{Coffee Break}}\\ \midrule
+	10:45--11:15 & Stephen Gramley & (University of Bielefeld)\\ \cmidrule(l){2-3}
+	& \multicolumn{2}{p{8.4cm}}{A corpus-based study of English prepositions.}\\ \midrule
+	11:15--11:45 & Ilka Mindt & (Paderborn University)\\ \cmidrule(l){2-3}
+	& \multicolumn{2}{p{8.4cm}}{Lorem ipsum dolor sit amet?}\\ \midrule
+	11:45--12:00 & \multicolumn{2}{c}{\textit{Conference Closing}}\\ \bottomrule
+\end{tabular}
+\vspace{2cm}}
 	\newpage
-\AddToShipoutPicture*{\BackgroundPicA}
+\AddToShipoutPicture*{\BackgroundPicA}%%PAGE 4
 \begin{adjustwidth}{-0.65cm}{0.2cm}
-\lipsum[5-6]
+~
 
 \vfill
 
